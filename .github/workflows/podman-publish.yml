@@ -17,7 +17,8 @@ env:
   # Use docker.io for Docker Hub if empty
   REGISTRY: quay.io
   # github.repository as <account>/<repo>
-  IMAGE_NAME: ${{ github.repository }}
+  IMAGE_NAME: altug_yildirim/ubuntu-podman-runner
+  IMAGE_TAG: v1
 
 
 jobs:
@@ -32,15 +33,14 @@ jobs:
 
       # Install the cosign tool except on PR
       # https://github.com/sigstore/cosign-installer
-      - name: Podman Login
-        # You may pin to the exact commit or the version.
-        # uses: redhat-actions/podman-login@51c64624b9c4ac6024fd15edf9bf8b420a8c5f2f
-        uses: redhat-actions/podman-login@v1
-        with:
-          # Hostname/domain of the container image registry such as quay.io, docker.io
-          registry: quay.io
-          # Username to log in against the container image registry
-          username: swoturkey
-          # Password, encrypted password, or access token for username
-          password: Ds123123!
-          logout: true
+      - name: Podman build
+        run: podman build -t quay.io/altug_yildirim/java-demo:v1 -f /runner/_work/spring-boot-web-app/spring-boot-web-app/Dockerfile .
+        shell: bash
+      
+      - name: Podman build
+        run: podman login quay.io -u swoturkey -p Ds123123!
+        shell: bash
+        
+      - name: Podman push
+        run: podman build -t quay.io/altug_yildirim/java-demo:v1
+        shell: bash
