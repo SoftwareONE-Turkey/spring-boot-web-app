@@ -18,7 +18,7 @@ spec:
         app: demo
     spec:
       containers:
-      - image: springguides/demo
+      - image: quay.io/altug_yildirim/java-demo:v1 
         name: demo
         resources: {}
 status: {}
