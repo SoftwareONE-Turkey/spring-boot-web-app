@@ -38,7 +38,7 @@ jobs:
         shell: bash
       
       - name: Podman build
-        run: podman login quay.io -u swoturkey -p Ds123123!
+        run: podman login quay.io -u altug_yildirim -p ${{ secrets.REPO_PASSWORD }}
         shell: bash
         
       - name: Podman push
