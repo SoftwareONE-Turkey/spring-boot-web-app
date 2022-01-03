@@ -1,4 +1,4 @@
-name: Docker
+name: Podman
 
 # This workflow uses actions that are not certified by GitHub.
 # They are provided by a third-party and are governed by
@@ -24,7 +24,7 @@ env:
 jobs:
   build:
 
-    runs-on: self-hosted
+    runs-on: [self-hosted,aks]
 
 
     steps:
