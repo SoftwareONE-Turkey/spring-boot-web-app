@@ -33,13 +33,14 @@ jobs:
 
       # Install the cosign tool except on PR
       # https://github.com/sigstore/cosign-installer
-      - name: Podman Build
-        run: sudo podman build -t quay.io/altug_yildirim/java-demo:v1 -f /runner/_work/spring-boot-web-app/spring-boot-web-app/Dockerfile .
-        shell: bash
-      
       - name: Podman Login
         run: podman login quay.io -u altug_yildirim -p ${{ secrets.REPO_PASSWORD }}
         shell: bash
+      - name: Podman Build
+        run: podman build -t quay.io/altug_yildirim/java-demo:v1 -f /runner/_work/spring-boot-web-app/spring-boot-web-app/Dockerfile .
+        shell: bash
+      
+     
         
       - name: Podman Push
         run: podman build -t quay.io/altug_yildirim/java-demo:v1
