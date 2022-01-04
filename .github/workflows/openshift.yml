@@ -134,7 +134,7 @@ jobs:
 
     # https://github.com/redhat-actions/oc-login#readme
     - name: OpenShift Login
-      run: oc login ${{ secrets.OPENSHIFT_SERVER }} --insecure-skip-tls-verify "true" --token ${{ secrets.OPENSHIFT_TOKEN }}
+      run: oc login ${{ secrets.OPENSHIFT_SERVER }} --insecure-skip-tls-verify=true --token ${{ secrets.OPENSHIFT_TOKEN }}
       shell: bash
 
     # This step should create a deployment, service, and route to run your app and expose it to the internet.
