@@ -63,7 +63,7 @@ jobs:
     name: Deploy to OpenShift
     # ubuntu-20.04 can also be used.
     runs-on: [self-hosted,ocp]
-    environment: production
+    environment: dev
 
     outputs:
       ROUTE: ${{ steps.deploy-and-expose.outputs.route }}
@@ -140,6 +140,6 @@ jobs:
     # This step should create a deployment, service, and route to run your app and expose it to the internet.
     # https://github.com/redhat-actions/oc-new-app#readme
     - name: Apply Deployment 
-      run: oc apply -f /runner/_work/spring-boot-web-app/spring-boot-web-app/deployment.yaml
+      run: oc apply -f /runner/_work/spring-boot-web-app/spring-boot-web-app/deployment.yaml -n ${{ env.OPENSHIFT_NAMESPACE }}
       shell: bash
 
