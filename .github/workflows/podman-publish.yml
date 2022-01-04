@@ -36,7 +36,7 @@ jobs:
             middle_name: The
             Last_Name: Octocat
       - name: echo env
-        run: echo $FIRST_NAME
+        run: echo "$GITHUB_REPOSITORY"
         shell: bash
       # Install the cosign tool except on PR
       # https://github.com/sigstore/cosign-installer
