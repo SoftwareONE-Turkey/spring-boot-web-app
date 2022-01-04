@@ -127,11 +127,6 @@ jobs:
 
     # The path the image was pushed to is now stored in ${{ steps.push-image.outputs.registry-path }}
 
-    - name: Install oc
-      uses: redhat-actions/openshift-tools-installer@v1
-      with:
-        oc: 4
-
     # https://github.com/redhat-actions/oc-login#readme
     - name: OpenShift Login
       run: oc login ${{ secrets.OPENSHIFT_SERVER }} --insecure-skip-tls-verify=true --token ${{ secrets.OPENSHIFT_TOKEN }}
