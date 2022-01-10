@@ -62,7 +62,7 @@ jobs:
   openshift-cd:
     name: Deploy to OpenShift
     # ubuntu-20.04 can also be used.
-    runs-on: [self-hosted,ocp]
+    runs-on: [self-hosted,ocp-build]
     environment: dev
 
     outputs:
