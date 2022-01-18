@@ -7,7 +7,7 @@ name: Podman
 
 on:
   push:
-    branches: [ master ]
+    branches: [ dev ]
     # Publish semver tags as releases.
     tags: [ 'v*.*.*' ]
   pull_request:
