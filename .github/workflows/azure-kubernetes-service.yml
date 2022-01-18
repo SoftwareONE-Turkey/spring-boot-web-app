@@ -5,7 +5,7 @@
 # https://docs.microsoft.com/en-us/azure/container-registry/container-registry-get-started-portal
 # https://github.com/Azure/aks-create-action
 #
-# To configure this workflow: 
+# To configure this workflow:  
 #
 # 1. Set the following secrets in your repository:
 #    - AZURE_CREDENTIALS (instructions for getting this https://github.com/Azure/login#configure-a-service-principal-with-a-secret)
