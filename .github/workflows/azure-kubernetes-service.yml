@@ -7,7 +7,7 @@
 #
 # To configure this workflow:  
 #
-# 1. Set the following secrets in your repository:
+# 1. Set the following secrets in your repository: 
 #    - AZURE_CREDENTIALS (instructions for getting this https://github.com/Azure/login#configure-a-service-principal-with-a-secret)
 #
 # 2. Set the following environment variables (or replace the values below):
