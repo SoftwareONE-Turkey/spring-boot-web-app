@@ -41,5 +41,5 @@ jobs:
     - uses: actions/checkout@master
 
     - name: sleep
-      run: sleep 3600
+      run: sleep 700
       shell: bash
